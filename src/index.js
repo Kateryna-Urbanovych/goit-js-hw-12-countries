@@ -1,4 +1,4 @@
-import './css/styles.css';
+import './styles.css';
 
 import getRefs from './js/get-refs';
 import API from './js/fetch-countries';
