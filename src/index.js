@@ -1,11 +1,13 @@
-// import './styles.css';
-
+import "./css/styles.css";
 import getRefs from './js/get-refs';
 import API from './js/fetch-countries';
 import countryCardTpl from './templates/country-card.hbs';
 import countriesListTpl from './templates/countries-list.hbs';
 const debounce = require('lodash.debounce');
 import pnotify from './js/pnotife-results';
+
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
 
 const refs = getRefs();
 
@@ -16,7 +18,8 @@ function onSearchInput() {
     const searchQuery = refs.searchInput.value;
 
     API.fetchCountries(searchQuery)
-        .then(searchResult);
+        .then(searchResult)
+        .catch(console.log);
 }
 
 function searchResult(countries) {
